@@ -18,11 +18,26 @@ Circulo.prototype.dibujar = function(ctx) {
     /*ctx.beginPath();
     ctx.strokeStyle = "blue";
     ctx.fillStyle = "black";
-    ctx.arc(this.x, this.y, 50, Math.PI / 2, Math.PI*2,false);
+    ctx.arc(this.x, this.y, 50, Math.PI / 5, Math.PI*7.5/4,false);
     ctx.stroke();
     ctx.fill();
     ctx.closePath();*/
     
-    var imagen = assetManager.getAsset('vacanormal');
-    ctx.drawImage(imagen, this.x, this.y);
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, 50, (55/180) * Math.PI, (235/180) * Math.PI, false);
+    ctx.fillStyle = "rgb(0,0, 0)";
+    ctx.fill();
+    ctx.closePath();
+    
+    ctx.beginPath();
+    ctx.arc(this.x, this.y, 50, (135/180) * Math.PI, (315/180) * Math.PI, false);
+    ctx.fillStyle = "blue";
+    ctx.fill();
+    ctx.closePath();
+    
+    ctx.beginPath();
+    ctx.arc(this.x, this.y - 25, 10, 0, 2 * Math.PI, false);
+    ctx.fillStyle = "black";
+    ctx.fill();
+    ctx.closePath();
 };
